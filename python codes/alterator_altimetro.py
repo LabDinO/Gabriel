@@ -1,6 +1,6 @@
 #importando os arquivos xyz e criando um arquivo novo de saida, com o proposito de diminuir o arquivo gigantesco de 62gibas
-arquivo_entrada = 'altimetria_semrio.xyz'
-arquivo_saida= 'altimetria_semrio_2.xyz'
+arquivo_entrada = 'd:\Gabriel/finaltcc/batimetria/bati_flripa_32722_casanepagri_corrigido_imbituba.xyz'
+arquivo_saida= 'd:\Gabriel/finaltcc/batimetria/bati_flripa_32722_casanepagri_corrigido_imbituba_delfttbm.xyz'
 import time
 
 print('Comecei')
@@ -10,16 +10,17 @@ with open(arquivo_entrada, 'r') as entrada, open(arquivo_saida, 'w') as saida:
     for linha in entrada:
         linha2=linha.split(' ')
         #aqui é ajustado o valor de não interesse no arquivo
-        if float(linha2[2]) <40 and round(float(linha2[2]), 3) != 0:
+        
+        #if float(linha2[2]) <40 and round(float(linha2[2]), 3) != 0:
             #saida.write(linha)
 
         #criando variaveis para arredondar os numeros
-            x, y, z =float(linha2[0]), float(linha2[1]), float(linha2[2])
+        x, y, z =float(linha2[0]), float(linha2[1]), float(linha2[2])
         #variaveis arredondadas
-            rx, ry, rz = round(x, 2), round(y, 2), round(z, 3)
+        #rx, ry, rz = round(x, 2), round(y, 2), -round(z, 3)
         
         #escrevendo as variaveis arredondadas no novo arquivo usando um fstring
-            linhasaida= f'{rx} {ry} {rz}\n'
-            saida.write(linhasaida)
+        linhasaida= f'{x} {y} {-z}\n'
+        saida.write(linhasaida)
             
 print('Terminei')

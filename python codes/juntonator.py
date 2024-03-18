@@ -1,7 +1,8 @@
-arquivo_entrada = "../finaltcc/batimetria/bati_casanepagri2.xyz"
-arquivo_aux = 'dados_casan/batimetriaxyz/1055029_ENGEPLUS_RIO TAVARES_BATIMETRIA_TRECHO2_BRAÇO NORTE_UTM22S_WGS84_REVA_V1.XYZ'
-arquivo_saida= '../finaltcc/batimetria/bati_casanepagri_final.xyz'
+arquivo_entrada = "../finaltcc/altimetria/altimetria_rtavares_semrio_alteradaprajunntar.xyz"
+arquivo_aux = '../finaltcc/batimetria/bati_flripa_32722_casanepagri_corrigido_imbituba.xyz'
+arquivo_saida= '../finaltcc/bati_altimetria/altibati_flp_32722.xyz'
 
+print('comecei')
 
 # Abra os arquivos de entrada e saída
 with open(arquivo_entrada, 'r') as arquivo1, open(arquivo_aux, 'r') as arquivo2, open(arquivo_saida, 'w') as arquivo_final:
@@ -16,5 +17,5 @@ with open(arquivo_entrada, 'r') as arquivo1, open(arquivo_aux, 'r') as arquivo2,
 # Feche os arquivos
 arquivo1.close()
 arquivo2.close()
-print('oi')
+print('terminou')
 arquivo_final.close()
